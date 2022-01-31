@@ -26,7 +26,7 @@
 </template>
 <script>
 import Table from '@/components/Table.vue'
-import { computed, onMounted, reactive, ref,  } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import { filterList, mapList } from './listHelper'
 import dummy from '@/assets/dummy.json'
 import timeout from 'q'
@@ -84,12 +84,12 @@ export default {
          modalData.value = ''
       }
 
-      function changeRecordData(data){
-        state.items = state.items.map(item => {
-           if(item.id === data.id){
-              return {...item, status: data.isVerified, name: data.name};
-           } else return item
-        })
+      function changeRecordData(data) {
+         state.items = state.items.map(item => {
+            if (item.id === data.id) {
+               return { ...item, status: data.isVerified, name: data.name }
+            } else return item
+         })
       }
 
       return {
@@ -100,7 +100,7 @@ export default {
          isModalActive,
          modalData,
          closeModal,
-         changeRecordData,
+         changeRecordData
       }
    }
 }
